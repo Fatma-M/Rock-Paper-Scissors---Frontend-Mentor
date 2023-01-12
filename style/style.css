@@ -231,7 +231,6 @@ body {
   display: flex;
   justify-content: flex-end;
   width: 100%;
-  transform: translateY(20px);
 }
 @media (max-width: 432px) {
   .rules-btn {
