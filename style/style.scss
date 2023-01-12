@@ -1,0 +1,351 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+
+$Dark-Text: hsl(229, 25%, 31%);
+$Score-Text: hsl(229, 64%, 46%);
+$Score-Number: #3b4363;
+$Header-Outline: hsl(217, 16%, 45%);
+$Scissors-Gradient: hsl(39, 89%, 49%) to hsl(40, 84%, 53%);
+$Paper-Gradient: rgb(72, 101, 244) to hsl(230, 89%, 65%);
+$Rock-Gradient: rgb(220, 46, 78) to hsl(349, 70%, 56%);
+$Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%);
+$white: #fff;
+// Background
+$Radial-Gradient: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box !important;
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background: $Radial-Gradient;
+  // overflow: hidden;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.scoreboard {
+  width: 90%;
+  max-width: 700px;
+  border: 2px solid $Header-Outline;
+  border-radius: 15px;
+  margin: 40px auto;
+  padding: 20px;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 432px) {
+    width: 90%;
+  }
+
+  .title {
+    img {
+      max-width: 100%;
+
+      @media (max-width: 432px) {
+        max-width: 85%;
+      }
+    }
+  }
+
+  .score {
+    width: 150px;
+    height: 110px;
+    background-color: $white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 432px) {
+      width: 100px;
+      height: 90%;
+      padding: 10px;
+    }
+
+    p {
+      color: $Score-Text;
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 19px;
+      letter-spacing: 2.5px;
+    }
+
+    h1 {
+      color: $Score-Number;
+      font-size: 56px;
+
+      @media (max-width: 432px) {
+        font-size: 38px;
+      }
+    }
+  }
+}
+
+.hands {
+  // margin-top: 100px;
+  width: 476px;
+  height: 430px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-image: url("../images/bg-triangle.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-basis: 30px;
+
+  @media (max-width: 432px) {
+    width: 100%;
+    margin-top: 0px;
+    background-size: 60%;
+  }
+
+  .scissors {
+    margin-left: 20px;
+
+    @media (max-width: 432px) {
+      margin-left: 0;
+    }
+  }
+
+  .paper {
+    margin-left: 20px;
+
+    @media (max-width: 432px) {
+      margin-left: 0;
+    }
+  }
+
+  div {
+    img {
+      width: 100%;
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: translate3d(0px, -8px, 0px);
+    }
+
+    @media (max-width: 432px) {
+      width: 35%;
+    }
+  }
+}
+
+.contest {
+  width: 90%;
+  max-width: 900px;
+  // display: flex;
+  display: none;
+
+  // margin-top: 50px;
+
+  .userhand {
+    order: 1;
+  }
+
+  .referee {
+    order: 2;
+  }
+
+  .computerhand {
+    order: 3;
+  }
+
+  @media (max-width: 493px) {
+    flex-wrap: wrap;
+    .referee {
+      order: 3;
+      display: block;
+    }
+
+    .computerhand {
+      order: 2;
+    }
+  }
+
+  img {
+    width: 275px;
+    height: 275px;
+
+    &.animate {
+      transition: transform ease-in-out 0.2s infinite;
+      animation: animate-image 1s;
+    }
+
+    @media (max-width: 782px) {
+      width: 200px;
+      height: 200px;
+    }
+
+    @media (max-width: 604px) {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  & > div {
+    flex: 1;
+  }
+
+  h1 {
+    color: $white;
+    font-size: 28px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    margin: 20px auto;
+
+    @media (max-width: 782px) {
+      font-size: 1rem;
+    }
+  }
+
+  .handImageContainer {
+    display: flex;
+    justify-content: center;
+  }
+
+  .referee {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      font-size: 45px;
+
+      @media (max-width: 782px) {
+        font-size: 32px;
+      }
+    }
+
+    .newGame {
+      background: $white;
+      padding: 12px 24px;
+      width: 144px;
+      border-radius: 6px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: $Dark-Text;
+      transition: all 0.15s;
+
+      &:hover {
+        background: darken($color: #fff, $amount: 3);
+        transform: translate3d(0px, -2px, 0px);
+      }
+    }
+  }
+}
+
+.rules-btn {
+  margin: 5px;
+  padding: 20px;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  transform: translateY(20px);
+
+  // position: absolute;
+  // bottom: 0;
+
+  @media (max-width: 432px) {
+    margin: 30px auto;
+    justify-content: center;
+    text-align: center;
+  }
+
+  button {
+    background-color: inherit;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 1.9px;
+    border: 2px solid $Header-Outline;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+      transform: translate3d(0px, -8px, 0px);
+    }
+  }
+}
+
+.rules-modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 120%;
+  position: absolute;
+  top: 0;
+  background-color: rgba($color: #000000, $alpha: 0.7);
+
+  .modal-container {
+    max-width: 90%;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 30px;
+
+    .modal-header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+
+      h1 {
+        color: $Dark-Text;
+        text-transform: uppercase;
+      }
+
+      button {
+        background-color: inherit;
+        border: none;
+
+        img {
+          width: 100%;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .modal-content {
+      display: flex;
+      justify-content: center;
+      img {
+        max-width: 90%;
+      }
+    }
+  }
+}
+
+@keyframes animate-image {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
