@@ -1,22 +1,23 @@
 ### Links
 
 - Solution URL:
-  [https://www.frontendmentor.io/solutions/calculator-app-iDU49dKiKp]
-- Live Site URL: [https://calculator-frontend-mentor-seven.vercel.app/]
+  [https://www.frontendmentor.io/solutions/rock-paper-scissors-game-lp2oRhjXWx]
+- Live Site URL: [https://rock-paper-scissors-frontend-mentor-chi.vercel.app/]
 
 ### The challenge
 
 Users should be able to:
 
-- See the size of the elements adjust based on their device's screen size
-- Perform mathmatical operations like addition, subtraction, multiplication, and
-  division
-- Adjust the color theme based on their preference
+- View the optimal layout for the game depending on their device's screen size
+- Play Rock, Paper, Scissors against the computer
 
 ### Screenshot
 
-![theme1](./design/theme1.png) ![theme2](./design/theme2.png)
-![theme3](./design/theme3.png)
+![main](./design/main-screen.png)
+![win](./design/win.png)
+![lose](./design/lose.png)
+![draw](./design/draw.png)
+![rules](./design/rules.png)
 
 ### Built with
 
@@ -24,7 +25,7 @@ Users should be able to:
 - SASS
 - JavaScript
 
-# Frontend Mentor - Calculator App solution
+# Frontend Mentor - Rock, Paper, Scissors Game solution
 
 This is a solution to the
-[Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29).
+[Rock, Paper, Scissors Game challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH).
