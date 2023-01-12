@@ -260,10 +260,7 @@ body {
   display: flex;
   justify-content: flex-end;
   width: 100%;
-  transform: translateY(20px);
-
-  // position: absolute;
-  // bottom: 0;
+  // transform: translateY(20px);
 
   @media (max-width: 432px) {
     margin: 30px auto;
